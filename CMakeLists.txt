@@ -17,7 +17,7 @@ set(CMAKE_CXX_COMPILER /usr/bin/g++)
 #### the list of targets ####
 add_executable(A1 A1/main.cpp)
 add_executable(A2 A2/main.cpp A2/sortTester.h A2/sort.h A2/arrayGenerator.h)
-add_executable(A3 A3/main.cpp)
+add_executable(A3 A3/main.cpp A3/arrayGenerator.h A3/sort.h A3/sortTester.h)
 add_executable(P1 P1/main.cpp)
 add_executable(P2 P2/main.cpp)
 add_executable(P3 P3/main.cpp)
