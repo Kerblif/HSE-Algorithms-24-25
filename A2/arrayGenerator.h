@@ -14,16 +14,26 @@ public:
     sorted_array_(generateSortedArray()),
     almost_sorted_array_(generateAlmostSortedArray()) {}
 
-  std::vector<int> getRandomArray(int size) const {
-    return std::vector<int>(random_array_.begin(), random_array_.begin() + size);
+  std::vector<int> getRandomArray(size_t size) const {
+    return {random_array_.begin(), random_array_.begin() + size};
   }
 
-  std::vector<int> getSortedArray(int size) const {
-    return std::vector<int>(sorted_array_.begin(), sorted_array_.begin() + size);
+  std::vector<int> getSortedArray(size_t size) const {
+    return {sorted_array_.begin(), sorted_array_.begin() + size};
   }
 
-  std::vector<int> getAlmostSortedArray(int size) const {
-    return std::vector<int>(almost_sorted_array_.begin(), almost_sorted_array_.begin() + size);
+  std::vector<int> getAlmostSortedArray(size_t size) const {
+    return {almost_sorted_array_.begin(), almost_sorted_array_.begin() + size};
+  }
+
+  std::vector<int> generate(size_t n, size_t type) {
+    if (type == 0) {
+      return getRandomArray(n);
+    } else if (type == 1) {
+      return getSortedArray(n);
+    } else {
+      return getAlmostSortedArray(n);
+    }
   }
 
 private:
